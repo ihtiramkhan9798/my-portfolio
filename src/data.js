@@ -139,19 +139,19 @@ export const testimonials = [
     name: 'Kerren Ortlepp',
     role: 'Software Engineer @ Zobyt',
     quote:
-      "Ihtiram worked at Entroost as a full-stack developer. He was excellent and had a real eye for design. If there was ever a time where we had a complicated frontend or needed to know what the best CSS approach was for something, Ihtiram was our go-to man!",
+      "Ihtiram khan worked at Entroost as a full-stack developer. He was excellent and had a real eye for design. If there was ever a time where we had a complicated frontend or needed to know what the best CSS approach was for something, Ihtiram was our go-to man!",
   },
   {
     name: 'Ahmed Raza',
     role: 'Product Manager @ Zobyt',
     quote:
-      "Working with Ihtiram was a great experience. He consistently delivered clean, well-tested code and communicated proactively whenever blockers came up. A dependable engineer who genuinely cares about the product.",
+      "Working with Ihtiram khan was a great experience. He consistently delivered clean, well-tested code and communicated proactively whenever blockers came up. A dependable engineer who genuinely cares about the product.",
   },
   {
     name: 'Sara Malik',
     role: 'Founder @ Upwork Client',
     quote:
-      "Ihtiram rebuilt our entire website ahead of schedule and it looks fantastic. He understood exactly what we wanted and improved on it. Highly recommend him for any web or mobile project.",
+      "Ihtiram khan rebuilt our entire website ahead of schedule and it looks fantastic. He understood exactly what we wanted and improved on it. Highly recommend him for any web or mobile project.",
   },
 ]
 
