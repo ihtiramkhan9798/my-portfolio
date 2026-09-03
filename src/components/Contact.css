@@ -1,0 +1,84 @@
+.contact-layout {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.contact-intro {
+  flex: 0 0 280px;
+}
+
+.contact-intro h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.contact-intro p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+.contact-intro a {
+  color: var(--accent-red);
+  font-weight: 600;
+}
+
+.contact-form {
+  flex: 1;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 13px 16px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-red);
+}
+
+.contact-form .btn-primary {
+  align-self: flex-start;
+}
+
+.form-status {
+  color: var(--accent-red);
+  font-size: 0.85rem;
+}
+
+.site-footer {
+  text-align: center;
+  margin-top: 70px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 800px) {
+  .contact-layout { flex-direction: column; }
+  .form-row { flex-direction: column; }
+}
