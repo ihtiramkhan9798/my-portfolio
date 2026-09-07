@@ -11,7 +11,7 @@ export const profile = {
     "Hello! I'm Ihtiram, and I'm based in Peshawar, Pakistan.Currently pursuing my bachelors in Computer Science, I'm a full stack developer with hands-on experience across the JavaScript ecosystem — building complete web applications from database to UI, and bringing interfaces to life with smooth, purposeful animation.",
   ],
   techStack: ['JavaScript (ES6+)', 'React js', 'Next js', 'Node js', 'Express js', 'MongoDB', 'GSAP', 'Locomotive Scroll',],
-  cvPath: '/Ihtiram_Khan_resume.pdf',
+  cvPath: '/Ihtiram_Khan_CV.pdf',
   whatsappNumber: '923140076077', // country code + number, no + or spaces
   email: 'mihtiram2006@gmail.com',
   socials: {

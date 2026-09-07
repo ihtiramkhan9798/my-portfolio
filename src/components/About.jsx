@@ -47,7 +47,7 @@ export default function About() {
   const handleDownloadCV = () => {
     const link = document.createElement('a')
     link.href = profile.cvPath
-    link.download = 'Ihtiram_Khan_resume.pdf'
+    link.download = 'Ihtiram_Khan_CV.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
