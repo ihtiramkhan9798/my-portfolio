@@ -100,7 +100,7 @@
 .sidebar-theme-toggle:hover {
   color: #fff;
   background: var(--accent-red);
-  transform: rotate(20deg);
+  transform: rotate(1deg);
 }
 
 @media (max-width: 900px) {
