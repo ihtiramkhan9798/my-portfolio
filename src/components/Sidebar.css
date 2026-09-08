@@ -13,6 +13,34 @@
   transition: background 0.3s ease;
 }
 
+/* Nav-item text labels: hidden on the icon-only desktop rail,
+   shown once the sidebar becomes a mobile drawer (see media query below). */
+.sidebar-link-label {
+  display: none;
+}
+
+/* Hamburger button that opens the drawer on mobile. Hidden on desktop. */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  background: var(--sidebar-bg);
+  color: #fff;
+  box-shadow: var(--shadow-card);
+  z-index: 200;
+}
+
+/* Dark overlay behind the open mobile drawer */
+.sidebar-backdrop {
+  display: none;
+}
+
 .sidebar-logo {
   width: 38px;
   height: 38px;
@@ -76,5 +104,68 @@
 }
 
 @media (max-width: 900px) {
-  .sidebar { display: none; }
+  /* Show the hamburger button */
+  .sidebar-toggle {
+    display: flex;
+  }
+
+  /* Turn the sidebar into an off-canvas drawer instead of hiding it */
+  .sidebar {
+    width: 240px;
+    align-items: stretch;
+    padding: 26px 18px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-logo {
+    align-self: flex-start;
+    margin-left: 4px;
+  }
+
+  /* Expand links into full-width rows with icon + label, like a real menu */
+  .sidebar-nav {
+    width: 100%;
+  }
+
+  .sidebar-link,
+  .sidebar-theme-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 0 12px;
+    border-radius: var(--radius-sm);
+  }
+
+  .sidebar-theme-toggle {
+    border-radius: var(--radius-sm);
+  }
+
+  .sidebar-link-label {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  /* Backdrop appears behind the drawer once it's open */
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 90;
+  }
+
+  .sidebar-backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
