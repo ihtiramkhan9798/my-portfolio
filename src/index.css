@@ -179,3 +179,75 @@ img { max-width: 100%; display: block; }
   :root { --sidebar-w: 0px; }
   .section { padding: 70px 6vw; }
 }
+
+
+/* /changes of tech marquee/ */
+
+.tech-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 18px 0;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.tech-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  animation: tech-scroll 24s linear infinite;
+}
+
+.tech-marquee:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
+
+.tech-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 11px 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  /* background: var(--card-bg); */
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.tech-icon {
+  
+  display: grid;
+  place-items: center;
+  color: #e14247;
+  font-size: 1.25rem;
+}
+  /* display: grid;
+  place-items: center;
+  font-size: 1.25rem; */
+
+
+/* Moves continuously from right to left */
+@keyframes tech-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee-track {
+    animation: none;
+  }
+}

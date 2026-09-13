@@ -10,7 +10,7 @@ import Projects from './components/Projects'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import WhatsAppButton from './components/WhatsAppButton'
-
+import TechMarquee from './components/TechMarquee'
 export default function App() {
   return (
     <ThemeProvider>
@@ -19,6 +19,7 @@ export default function App() {
           <Sidebar />
           <Hero />
           <About />
+          <TechMarquee />
           <Services />
           <Experience />
           <Projects />
