@@ -8,7 +8,8 @@ export const profile = {
   location: 'Peshawar, Pakistan',
   photo: '/images/profile.png',
   bio: [
-    "Hello! I'm Ihtiram, and I'm based in Peshawar, Pakistan.Currently pursuing my bachelors in Computer Science, I'm a full stack developer with hands-on experience across the JavaScript ecosystem — building complete web applications from database to UI, and bringing interfaces to life with smooth, purposeful animation.",
+    "Hi I am Ihtiram, a Full Stack Developer located in Islamabad, Pakistan. I hold a Bachelor’s degree in Computer Science. Enjoy creating websites and web applications from the ground up, to production.",
+    "With 3 years of freelancing experience I have worked with clients to turn their ideas into practical digital products. Whether it is a website, a custom web app or a complete online platform, focuses on making it fast easy to use and visually polished"
   ],
   techStack: ['JavaScript (ES6+)', 'React js', 'Next js', 'Node js', 'Express js', 'MongoDB', 'GSAP', 'Locomotive Scroll',],
   cvPath: '/Ihtiram_Khan_CV.pdf',

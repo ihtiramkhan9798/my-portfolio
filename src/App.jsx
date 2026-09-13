@@ -15,7 +15,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <SmoothScrollProvider>
-        <div className="app-shell">
+        <div className="app-shell grid-bg">
           <Sidebar />
           <Hero />
           <About />
