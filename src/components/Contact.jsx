@@ -101,7 +101,7 @@ ${form.message}`
 
                 <div>
                   <span>Address:</span>
-                  <strong>{location}</strong>
+                  <strong>{"Islamabad, Pakistan"}</strong>
                 </div>
               </div>
 
