@@ -213,12 +213,34 @@
     border-radius: 12px;
   }
 
+  .contact-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-intro {
+    display: contents;
+  }
+
   .contact-intro h2 {
+    order: 1;
     font-size: 2rem;
   }
 
+  .contact-form {
+    order: 2;
+  }
+
+  .contact-description {
+    order: 3;
+    margin-top: 38px;
+  }
+
   .contact-details {
+    order: 4;
     gap: 22px;
+    margin-top: 26px;
   }
 
   .contact-detail {

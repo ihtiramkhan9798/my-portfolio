@@ -1,4 +1,4 @@
-.services-grid {
+/* .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
@@ -51,4 +51,186 @@
 
 @media (max-width: 900px) {
   .services-grid { grid-template-columns: 1fr; }
+} */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  color: #fff;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-size: 180% 180%;
+  background-position: 0% 0%;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.4s ease,
+              background-position 0.6s ease;
+}
+
+/* Diagonal shine that sweeps across the card on hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.28) 45%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Soft radial highlight that fades in behind the icon on hover */
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.015);
+  background-position: 100% 100%;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.service-card:hover::before {
+  transform: translateX(120%);
+}
+
+.service-card:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.service-purple {
+  background-image: linear-gradient(135deg, #7b73ff, #6155f5, #8a7bff);
+}
+.service-purple:hover { box-shadow: var(--shadow-card-hover), 0 18px 45px -12px rgba(108, 99, 255, 0.55); }
+
+.service-yellow {
+  background-image: linear-gradient(135deg, #f9d15c, #f0b429, #ffdd85);
+  color: #392e00;
+}
+.service-yellow:hover { box-shadow: var(--shadow-card-hover), 0 18px 45px -12px rgba(240, 180, 41, 0.55); }
+
+.service-pink {
+  background-image: linear-gradient(135deg, #f77e93, #ef4d68, #ff9baa);
+}
+.service-pink:hover { box-shadow: var(--shadow-card-hover), 0 18px 45px -12px rgba(239, 77, 104, 0.55); }
+
+.service-icon {
+  position: relative;
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: service-icon-pulse 2.6s ease-in-out infinite;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+/* Automatic, continuous glow — plays on its own, no hover needed */
+@keyframes service-icon-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35); }
+  50% { box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); }
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.14) rotate(-8deg);
+  background: rgba(255, 255, 255, 0.32);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.service-card h3,
+.service-card p {
+  position: relative;
+  z-index: 2;
+}
+
+.service-card h3 {
+  color: inherit;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  transition: transform 0.35s ease;
+}
+
+.service-card:hover h3 {
+  transform: translateX(4px);
+}
+
+/* Animated underline that grows in beneath the heading on hover */
+.service-card h3::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  margin-top: 6px;
+  background: currentColor;
+  opacity: 0.6;
+  transition: width 0.4s ease 0.05s;
+}
+
+.service-card:hover h3::after {
+  width: 36px;
+}
+
+.service-card p {
+  color: inherit;
+  opacity: 0.85;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  transition: opacity 0.35s ease;
+}
+
+.service-card:hover p {
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-icon {
+    animation: none;
+  }
+  .service-card,
+  .service-card::before,
+  .service-card::after,
+  .service-icon,
+  .service-card h3,
+  .service-card h3::after,
+  .service-card p {
+    transition: none !important;
+    animation: none !important;
+  }
 }

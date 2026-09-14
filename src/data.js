@@ -26,9 +26,10 @@ export const profile = {
 }
 
 export const stats = [
-  { label: 'Javascript Problem Solved', value: 600, suffix: '+' },
+  { label: 'Experience', value: "2 Y." , suffix: '' },
+  { label: 'Projects Completed', value: 30, suffix: '+' },
+
   { label: 'Github Repositories', value: 48, suffix: '' },
-  { label: 'Projects Completed', value: 70, suffix: '+' },
   { label: 'Code Quality', value: 100, suffix: '' },
 ]
 
