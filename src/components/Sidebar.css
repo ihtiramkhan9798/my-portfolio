@@ -77,6 +77,7 @@
 .sidebar-link:hover {
   color: var(--sidebar-icon-active);
   background: rgba(255, 255, 255, 0.06);
+  
 }
 
 .sidebar-link.active {
