@@ -27,15 +27,19 @@
   left: 18px;
   width: 44px;
   height: 44px;
-  border-radius: 12px;
+  border-radius: 50%;
   align-items: center;
   justify-content: center;
-  background: var(--sidebar-bg);
-  color: #fff;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
   box-shadow: var(--shadow-card);
   z-index: 200;
 }
 
+[data-theme='dark'] .sidebar-toggle {
+  color: #ffffff;
+}
 /* Dark overlay behind the open mobile drawer */
 .sidebar-backdrop {
   display: none;

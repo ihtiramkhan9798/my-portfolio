@@ -3,12 +3,12 @@
 // ---------------------------------------------------------------------------
 
 export const profile = {
-  name: 'Ihtiram khan',
+  name: 'M. Ihtiram',
   title: "I'm a Full Stack Developer",
   location: 'Peshawar, Pakistan',
   photo: '/images/profile.png',
   bio: [
-    "Hi I am Ihtiram, a Full Stack Developer located in Islamabad, Pakistan. I hold a Bachelor’s degree in Computer Science. Enjoy creating websites and web applications from the ground up, to production.",
+    "Hi I am M. Ihtiram, a Full Stack Developer located in Islamabad, Pakistan.I develop high quality responsive websites, custom web apps, and sleek online platforms crafted with performance, design, and user experience in mind. Enjoy creating websites and web applications from the ground up, to production.",
     "With 3 years of freelancing experience I have worked with clients to turn their ideas into practical digital products. Whether it is a website, a custom web app or a complete online platform, focuses on making it fast easy to use and visually polished"
   ],
   techStack: ['JavaScript (ES6+)', 'React js', 'Next js', 'Node js', 'Express js', 'MongoDB', 'GSAP', 'Locomotive Scroll',],
@@ -136,12 +136,15 @@ export const projects = [
 // },
 
 export const testimonials = [
+
   {
     name: 'Kerren Ortlepp',
-    role: 'Software Engineer @ Zobyt',
-    quote:
-      "Ihtiram khan worked at Entroost as a full-stack developer. He was excellent and had a real eye for design. If there was ever a time where we had a complicated frontend or needed to know what the best CSS approach was for something, Ihtiram was our go-to man!",
+    role: 'Software Engineer @ ALGORYC',
+    rating: 5,
+    quote: "Ihtiram worked at Entroost as a Full-Stack Developer, building modern web applications across frontend and backend. He delivered quality work on time and effectively turned project ideas into reliable, user-friendly solutions.",
   },
+  // ...same for the others, add rating: 5 (or 4) to each
+
   {
     name: 'Ahmed Raza',
     role: 'Product Manager @ Zobyt',
@@ -150,9 +153,25 @@ export const testimonials = [
   },
   {
     name: 'Sara Malik',
-    role: 'Founder @ Upwork Client',
+    role: 'Founder @ Project Lead, GreenTech',
+    rating: 5,
     quote:
       "Ihtiram khan rebuilt our entire website ahead of schedule and it looks fantastic. He understood exactly what we wanted and improved on it. Highly recommend him for any web or mobile project.",
   },
+   {
+    name: 'Awais Zahid',
+    role: 'Founder @ CEO, StyleHub',
+      rating: 5,
+    quote:
+      "“M. Ihtiram is a great full-stack developer. He delivered an amazing web app on time and did exactly what we needed. Really happy with his work—highly recommended!”",
+  },
+   {
+    name: 'Kodie Killian',
+    role: 'Founder @ Local Client',
+      rating: 5,
+    quote:
+      "“Really enjoyed working with Ihtiram. He quickly understood our requirements, solved issues efficiently, and delivered a solid web app right on schedule.”",
+  },
+  
 ]
 

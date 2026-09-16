@@ -1,54 +1,51 @@
-import React, { useLayoutEffect, useRef, useState } from 'react'
-import gsap from 'gsap'
+import React from 'react'
+import { FiStar } from 'react-icons/fi'
 import { testimonials } from '../data'
 import './Testimonials.css'
 
-export default function Testimonials() {
-  const [index, setIndex] = useState(0)
-  const t = testimonials[index]
-  const sectionRef = useRef(null)
+function initials(name) {
+  return name.split(' ').map((w) => w[0]).slice(0, 2).join('').toUpperCase()
+}
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.testimonial-card', {
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: '.testimonial-card', start: 'top 85%' },
-      })
-    }, sectionRef)
-    return () => ctx.revert()
-  }, [])
-
+function TestimonialCard({ t }) {
+  const rating = t.rating || 5
   return (
-    <section id="testimonials" className="section testimonials-section" ref={sectionRef}>
-      <div className="section-inner">
-        <h2 className="eyebrow-heading">Testimonials</h2>
-
-        <div className="testimonial-card">
-          <div className="testimonial-avatar">
-            <svg viewBox="0 0 100 100" width="100%" height="100%">
-              <circle cx="50" cy="50" r="50" fill="#c8e6f0" />
-              <circle cx="50" cy="42" r="18" fill="#c98f5e" />
-              <path d="M20 95 Q50 62 80 95 Z" fill="#1f2a3d" />
-              <circle cx="50" cy="30" r="20" fill="#111" />
-            </svg>
-          </div>
+    <div className="testimonial-card">
+      <div className="testimonial-stars">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <FiStar key={i} className={i < rating ? 'star filled' : 'star'} />
+        ))}
+      </div>
+      <p className="testimonial-quote">{t.quote}</p>
+      <div className="testimonial-footer">
+        {t.photo ? (
+          <img src={t.photo} alt={t.name} className="testimonial-avatar-img" />
+        ) : (
+          <span className="testimonial-avatar-initials">{initials(t.name)}</span>
+        )}
+        <div>
           <h4>{t.name}</h4>
           <span className="testimonial-role">{t.role}</span>
-          <p className="testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  )
+}
 
-          <div className="testimonial-dots">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                className={`dot ${i === index ? 'active' : ''}`}
-                onClick={() => setIndex(i)}
-                aria-label={`Testimonial ${i + 1}`}
-              />
-            ))}
-          </div>
+export default function Testimonials() {
+  const loopItems = [...testimonials, ...testimonials]
+
+  return (
+    <section id="testimonials" className="section testimonials-section">
+      <div className="section-inner">
+        <h2 className="eyebrow-heading">People love my work</h2>
+      </div>
+
+      <div className="testimonials-marquee">
+        <div className="testimonials-track">
+          {loopItems.map((t, i) => (
+            <TestimonialCard t={t} key={i} />
+          ))}
         </div>
       </div>
     </section>
